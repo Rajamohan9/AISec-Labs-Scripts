@@ -1,0 +1,27 @@
+{
+  "name": "SLSA Level 2 Protection",
+  "target": "branch",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "include": ["refs/heads/main"],
+      "exclude": []
+    }
+  },
+  "rules": {
+    "pull_request": {
+      "required_approving_review_count": 1,
+      "dismiss_stale_reviews_on_push": true,
+      "require_code_owner_review": false,
+      "require_last_push_approval": false,
+      "required_review_thread_resolution": false
+    },
+    "required_signatures": true,
+    "required_status_checks": {
+      "strict_required_status_checks_policy": true,
+      "required_check_names": []
+    },
+    "non_fast_forward": true
+  },
+  "bypass_actors": []
+}
